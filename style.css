@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #131212b9;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slider-container {
+  width: 750px;
+  margin: auto;
+  height: 350px;
+  margin: 10px auto;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .slider-container,
+  .slider-controls {
+    max-width: 548px;
+  }
+}
+
+.slider-container img {
+  opacity: 0;
+  -webkit-transition: 1.8s;
+  -o-transition: 1.8s;
+  transition: 1.8s;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider-container img.active {
+  opacity: 1;
+}
+
+.slider-container .slider-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: white;
+  background: green;
+  padding: 5px 10px;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.slider-controls {
+  width: 600px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.slider-controls .next,
+.slider-controls .prev {
+  text-align: center;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  background-color: red;
+  padding: 5px 10px;
+  width: 20%;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.slider-controls .next.disabled,
+.slider-controls .prev.disabled {
+  background-color: rgba(255, 0, 0, 0.5);
+  cursor: no-drop;
+}
+
+.slider-controls .indicator {
+  width: 60%;
+  margin: auto;
+}
+
+.slider-controls .indicator ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.slider-controls .indicator ul li {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #ffe8e8;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.slider-controls .indicator ul li.active {
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  background-color: red;
+  color: white;
+}
